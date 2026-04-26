@@ -15,28 +15,44 @@ const facilitiesList = [
 
 const roomsList = [
   {
-    type: "Single Occupancy",
-    price: "8,500",
-    img: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop",
-    tag: "Premium",
+    type: "One Night Stay - Sharing Bed",
+    price: "799",
+    img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=2070&auto=format&fit=crop",
+    tag: "Affordable",
+    tagColor: "budget",
+    features: ["Clean Bed", "Locker", "Common Washroom"]
+  },
+  {
+    type: "One Night Stay - Deluxe Room",
+    price: "1,499",
+    img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=2070&auto=format&fit=crop",
+    tag: "Daily Stay",
     tagColor: "premium",
-    features: ["Attached Bathroom", "AC Available", "Study Table"]
+    features: ["24hr Check-in", "Attached Bathroom", "Free WiFi"]
+  },
+  {
+    type: "Triple Sharing",
+    price: "7,500",
+    img: "https://www.mumbaiexpathousing.com/propertyimg/Mumbai-Expats-Housing-437-3%20sharing.jpg",
+    tag: "Budget",
+    tagColor: "budget",
+    features: ["Economical", "Comfortable", "Basic Amenities"]
   },
   {
     type: "Double Sharing",
     price: "9,000",
-    img: "https://images.unsplash.com/photo-1536376074432-8d642fed43f7?q=80&w=2070&auto=format&fit=crop",
+    img: "https://images.jdmagicbox.com/v2/comp/delhi/n3/011pxx11.xx11.180412192927.f7n3/catalogue/anjali-pg-accomodation-rohini-sector-3-delhi-paying-guest-accommodations-h2buwpl1pc.jpg",
     tag: "Bestseller",
     tagColor: "bestseller",
     features: ["Furnished", "Wardrobe", "Study Lamp"]
   },
   {
-    type: "Triple Sharing",
-    price: "15,000",
-    img: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070&auto=format&fit=crop",
-    tag: "Budget",
-    tagColor: "budget",
-    features: ["Economical", "Comfortable", "Basic Amenities"]
+    type: "Single Occupancy",
+    price: "12,000",
+    img: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop",
+    tag: "Premium",
+    tagColor: "premium",
+    features: ["Attached Bathroom", "AC Available", "Study Table"]
   }
 ];
 
