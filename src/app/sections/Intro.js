@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Wifi, Utensils, Droplets } from 'lucide-react';
+import { whatsappUrl } from '@/app/lib/contact';
 
 const features = [
   { icon: <ShieldCheck size={18} />, label: '24/7 CCTV & Security' },
@@ -84,10 +85,17 @@ const Intro = () => {
             </ul>
 
             <div className="intro-cta">
-              <button className="btn btn-primary">
+              <a href="#facilities" className="btn btn-primary">
                 Discover More <ArrowRight size={18} />
-              </button>
-              <button className="btn btn-outline">Schedule a Visit</button>
+              </a>
+              <a
+                href={whatsappUrl("Hi! I'd like to schedule a visit to Diamond PG.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                Schedule a Visit
+              </a>
             </div>
 
             <div className="stats-grid">

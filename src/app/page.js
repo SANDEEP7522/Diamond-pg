@@ -7,6 +7,7 @@ import WhyChooseUs from "./sections/WhyChooseUs";
 import Contact from "./sections/Contact";
 import Testimonials from "./sections/Testimonials";
 import Footer from "./sections/Footer";
+import WhatsAppFab from "./components/WhatsAppFab";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Contact />
       <Testimonials />
       <Footer />
+      <WhatsAppFab />
     </main>
   );
 }

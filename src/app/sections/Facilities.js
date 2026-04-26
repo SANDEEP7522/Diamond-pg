@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wifi, Battery, Droplets, Shield, Utensils, Zap, ArrowRight, Star, Sparkles } from 'lucide-react';
+import { whatsappUrl } from '@/app/lib/contact';
 
 const facilitiesList = [
   { icon: <Wifi size={20} />, name: "High-Speed WiFi" },
@@ -99,9 +100,14 @@ const Facilities = () => {
                   {room.tag}
                 </div>
                 <div className="room-overlay">
-                  <button className="view-details-btn">
+                  <a
+                    href={whatsappUrl(`Hi! I'd like more details about the ${room.type} room (₹${room.price}/month).`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="view-details-btn"
+                  >
                     View Details <ArrowRight size={16} />
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="room-content">
@@ -123,9 +129,14 @@ const Facilities = () => {
                     <span className="price-amount">₹{room.price}</span>
                     <span className="price-period">/month</span>
                   </div>
-                  <button className="book-btn">
+                  <a
+                    href={whatsappUrl(`Hi! I'd like to book the ${room.type} room (₹${room.price}/month) at Diamond PG.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="book-btn"
+                  >
                     Book <ArrowRight size={14} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

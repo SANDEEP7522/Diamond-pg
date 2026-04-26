@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Coffee, ShieldCheck, PartyPopper, ArrowRight, Heart } from 'lucide-react';
+import { whatsappUrl } from '@/app/lib/contact';
 
 const WhyChooseUs = () => {
   const features = [
@@ -82,15 +83,18 @@ const WhyChooseUs = () => {
               ))}
             </div>
 
-            <motion.button
+            <motion.a
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
+              href={whatsappUrl("Hi! I'd like to learn more about Diamond PG.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
             >
               Learn More <ArrowRight size={18} />
-            </motion.button>
+            </motion.a>
           </div>
 
           <motion.div

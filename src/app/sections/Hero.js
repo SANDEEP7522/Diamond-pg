@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Play } from 'lucide-react';
+import { whatsappUrl } from '@/app/lib/contact';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -70,13 +71,18 @@ const Hero = () => {
           custom={3}
           className="hero-buttons"
         >
-          <button className="btn btn-primary">
+          <a
+            href={whatsappUrl("Hi! I'd like to book a tour of Diamond PG.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Book a Tour <ArrowRight size={18} />
-          </button>
-          <button className="btn-glass">
+          </a>
+          <a href="#facilities" className="btn-glass">
             <span className="play-icon"><Play size={12} fill="white" /></span>
-            Watch Video
-          </button>
+            View Rooms
+          </a>
         </motion.div>
 
         <motion.div
@@ -97,7 +103,7 @@ const Hero = () => {
           </div>
           <div className="stat-divider" />
           <div className="stat">
-            <span className="stat-number gradient-text">₹4,999</span>
+            <span className="stat-number gradient-text">₹8,500</span>
             <span className="stat-label">Starting Price</span>
           </div>
         </motion.div>

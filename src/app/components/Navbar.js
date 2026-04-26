@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Globe, Share2, AtSign, Menu, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import BrandMark from './BrandMark';
+import { whatsappUrl } from '@/app/lib/contact';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,9 +85,14 @@ const Navbar = () => {
             </ul>
 
             <div className="nav-actions">
-              <button className="cta-btn">
+              <a
+                href={whatsappUrl("Hi! I'd like to book a room at Diamond PG.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-btn"
+              >
                 Book Now <ArrowRight size={15} />
-              </button>
+              </a>
               <button
                 className="mobile-menu-btn"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -147,9 +153,15 @@ const Navbar = () => {
               </ul>
 
               <div className="mobile-menu-footer">
-                <button className="btn btn-primary w-full">
+                <a
+                  href={whatsappUrl("Hi! I'd like to book a room at Diamond PG.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   Book Now <ArrowRight size={16} />
-                </button>
+                </a>
                 <div className="mobile-contact">
                   <a href="tel:+918279409255"><Phone size={14} /> +91 8279409255</a>
                   <a href="mailto:contact@diamondpg.com"><Mail size={14} /> contact@diamondpg.com</a>

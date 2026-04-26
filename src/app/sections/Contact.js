@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send, Clock, MessageCircle } from 'lucide-react';
+import { whatsappUrl, telUrl, mailUrl } from '@/app/lib/contact';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -9,6 +10,18 @@ const Contact = () => {
   });
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const msg = `Hi! I'd like to enquire about Diamond PG.
+
+Name: ${form.firstName} ${form.lastName}
+Email: ${form.email}
+Room Type: ${form.roomType || '—'}
+
+${form.message || ''}`.trim();
+    window.open(whatsappUrl(msg), '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -50,21 +63,21 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="info-card">
+              <a href={telUrl} className="info-card info-card-link">
                 <div className="info-icon"><Phone size={20} /></div>
                 <div>
                   <h4>Call Us</h4>
                   <p>+91 8279409255<br />+91 9876543211</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="info-card">
+              <a href={mailUrl} className="info-card info-card-link">
                 <div className="info-icon"><Mail size={20} /></div>
                 <div>
                   <h4>Email Us</h4>
                   <p>contact@diamondpg.com<br />support@diamondpg.com</p>
                 </div>
-              </div>
+              </a>
 
               <div className="info-card">
                 <div className="info-icon"><Clock size={20} /></div>
@@ -75,7 +88,12 @@ const Contact = () => {
               </div>
             </div>
 
-            <a href="#" className="whatsapp-cta">
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-cta"
+            >
               <MessageCircle size={20} />
               <div>
                 <strong>Chat on WhatsApp</strong>
@@ -91,7 +109,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="contact-form-side"
           >
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form" onSubmit={onSubmit}>
               <div className="form-row">
                 <div className="floating-field">
                   <input
